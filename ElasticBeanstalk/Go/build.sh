@@ -11,14 +11,16 @@ export GOBIN=/var/app/staging/bin
 export GOPATH=/var/app/staging
 export PATH=$PATH:$GOBIN:$GOPATH
 curl https://glide.sh/get | sh
+glide cc
 
 mkdir -p /root/.ssh
 
 wget -O /root/.ssh/id_rsa {{Path}}
 wget -O /root/.ssh/id_rsa.pub {{Path}}
-wget -O /root/.ssh/id_rsa.pub {{Path}}
+wget -O /root/.ssh/known_hosts {{Path}}
 chmod 600 /root/.ssh/id_rsa
 chmod 644 /root/.ssh/id_rsa.pub
+chmod 644 /root/.ssh/known_hosts
 
 # run glide up
 cd src/github.com/AccelaryID/accelary-api-go/
