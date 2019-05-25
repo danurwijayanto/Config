@@ -1,0 +1,2 @@
+wget -O env.json https://elasticbeanstalk-ap-southeast-1-233710995974.s3.amazonaws.com/Config/api-go-staging/env.json
+wget -O dbconfig.yml https://elasticbeanstalk-ap-southeast-1-233710995974.s3.amazonaws.com/Config/api-core-staging/dbconfig.yml
