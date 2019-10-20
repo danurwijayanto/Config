@@ -1,0 +1,14 @@
+docker stop domain.co.id
+docker rm domain.co.id
+docker run -d -it \
+--name=comain.co.id \
+--restart=always \
+--network=mynet \
+--ip=172.17.1.13 \
+-h domain \
+-p 2292:22 \
+-v /data/hosting/domain.co.id:/var/www \
+-v /data/conf/nginx.domain.co.id:/etc/nginx \
+-v /data/hosts.domain.co.id:/etc/hosts \
+danurwijayanto/nginx-php7.2 \
+/bin/bash

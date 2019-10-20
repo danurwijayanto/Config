@@ -1,0 +1,43 @@
+server {
+        listen 80 default;
+        root /var/www/html;
+        index index.html;
+        server_name _;
+        location / {
+                try_files $uri $uri/ =404;
+        }
+}
+
+#server {
+#        listen 80;
+#       listen 443 ssl;
+#        root /var/www/domain.co.id;
+#        index index.html index.php;
+#        server_name www.domain.co.id domain.co.id;
+#
+#        location / {
+#                try_files $uri $uri/ /index.php?$query_string;
+#        }
+#
+#        location ~ \.php$ {
+#                include snippets/fastcgi-php.conf;
+#                fastcgi_pass unix:/run/php/php7.1-fpm.sock;
+#        }
+#}
+
+
+server {
+        listen 80;
+        root /var/www/domain.co.id/public;
+        index index.html index.php;
+        server_name www.domain.co.id domain.co.id;
+
+        location / {
+                try_files $uri $uri/ /index.php?$query_string;
+        }
+
+        location ~ \.php$ {
+                include snippets/fastcgi-php.conf;
+                fastcgi_pass unix:/run/php/php7.2-fpm.sock;
+        }
+}
