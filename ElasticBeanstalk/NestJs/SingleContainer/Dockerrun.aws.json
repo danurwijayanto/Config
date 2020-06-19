@@ -1,0 +1,7 @@
+{
+  "AWSEBDockerrunVersion": "1",
+  "Image": {
+    "Name": "user/repo:0.8"
+  },
+  "Ports": [{ "ContainerPort": "3001", "HostPort": "8000" }]
+}

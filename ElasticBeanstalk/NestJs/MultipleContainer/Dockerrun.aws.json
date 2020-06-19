@@ -1,0 +1,38 @@
+{
+    "AWSEBDockerrunVersion": 2,
+    "containerDefinitions": [
+      {
+        "name": "api-service",
+        "image": "user/repo:0.5.3",
+        "memory": 256,
+        "links": [
+          "redis-accounting"
+        ],
+        "portMappings": [
+          {
+            "hostPort": 80,
+            "containerPort": 3005
+          }
+        ]
+      },
+      {
+        "name": "queue-service",
+        "image": "user/repo:0.5.3",
+        "memory": 256,
+        "links": [
+          "redis-accounting"
+        ]
+      },
+      {
+        "name": "redis-accounting",
+        "image": "user/repo:0.5.3",
+        "memory": 256,
+        "portMappings": [
+          {
+            "hostPort": 6375,
+            "containerPort": 6379
+          }
+        ]
+      }
+    ]
+  }
