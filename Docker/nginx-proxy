@@ -10,7 +10,7 @@ server {
 
 #server {
 #        listen 80;
-#       listen 443 ssl;
+#        listen 443 ssl;
 #        root /var/www/domain.co.id;
 #        index index.html index.php;
 #        server_name www.domain.co.id domain.co.id;
